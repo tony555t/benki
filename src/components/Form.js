@@ -3,8 +3,11 @@ import React from "react";
 function Form  () {
     return (
     <div>
-       <form>
+       <form className=" mt-3">
+        
+        
         <label>
+            
            
             date:
             <input type="date"id="date"/>
@@ -14,7 +17,7 @@ function Form  () {
             </label>
             <label>
             category:
-            <input type="categories"id="categories"/>
+            <input type="Categories"id="Categories"/>
             </label>
             <label>
             amount:

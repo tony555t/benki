@@ -8,8 +8,9 @@ function Table ({transactions}) {
               <td>{transaction.id}</td>
               <td>{transaction.date}</td>
               <td>{transaction.description}</td>
-              <td>{transaction.categories}</td>
+              <td>{transaction.category}</td>
               <td>{transaction.amount}</td>
+              
 
         </tr>
     })
@@ -18,7 +19,7 @@ function Table ({transactions}) {
 
     return (
       
-            <table>
+    <table className="table table-hover bg-primary mt-5">
       <thead>
         <tr>
          

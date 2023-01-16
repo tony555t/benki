@@ -1,11 +1,11 @@
 import React from "react";
 
-function Search  () {
+function Search  ({handleSearch}) {
     return (
-        <form>
+        <form className="mt-3"> 
         <label>
           Search:
-          <input type="text" name="text" />
+          <input type="text" name="text" onChange={handleSearch} />
         </label>
         <input type="submit" value="Submit" />
       </form>

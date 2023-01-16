@@ -10,22 +10,38 @@ import '../App.css';
 
 function App() {
   const [transactions, setTransaction] =useState([])
-  
+  const [search, setSearch] = useState([])
    useEffect(() => {
     fetch('http://localhost:3000/transactions')
    .then(response => response.json())
    .then(data => {
     setTransaction(data)
+    setSearch(data)
    })
  
 
    }, [])
 
+
+   function handleSearch(e){
+    setTransaction(search.filter(transactions => {
+      return (transactions.description.toLowerCase().includes(e.target.value))
+    }))
+      return transactions
+   }
+
+
+
+
+
+
+
+
   return (
     <div className="App backgroud-photo">
       {/* render componen */}
       <Header/>
-      <Search/>
+      <Search handleSearch ={handleSearch}/>
       < Form />
       <Table transactions ={transactions}/>
 
