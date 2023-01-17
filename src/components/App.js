@@ -12,11 +12,11 @@ function App() {
   const [transactions, setTransaction] =useState([])
   const [search, setSearch] = useState([])
    useEffect(() => {
-    fetch('http://localhost:3000/transactions')
+    fetch('https://api.jsonbin.io/v3/b/63c6729ddfc68e59d584aad3')
    .then(response => response.json())
    .then(data => {
-    setTransaction(data)
-    setSearch(data)
+    setTransaction(data.record.transactions)
+    setSearch(data.record.transactions)
    })
  
 
@@ -31,7 +31,10 @@ function App() {
    }
 
 
-
+function handleformUpdate(formdata){
+  const updatedTable = [...transactions, formdata]
+  setTransaction(updatedTable)
+} 
 
 
 
@@ -42,7 +45,7 @@ function App() {
       {/* render componen */}
       <Header/>
       <Search handleSearch ={handleSearch}/>
-      < Form />
+      < Form handleformUpdate={handleformUpdate}/>
       <Table transactions ={transactions}/>
 
     </div>
