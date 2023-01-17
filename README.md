@@ -43,6 +43,10 @@ To get the code ..
       -Run this command to get the backend started: json-server --watch db.json.
       -Test your server by visiting this route in the browser: <http://localhost:3000/characters>.
       -Rightclick on the index file and open live server.
+
+## live link
+[live link](https://benki.vercel.app/)
+
 ## Technologies used
 1. HTML5
 2.CSS
